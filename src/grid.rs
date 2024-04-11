@@ -1,6 +1,6 @@
 use crate::cell::Cell;
-
-struct Grid {
+#[derive(Debug, Clone)]
+pub struct Grid {
     width: usize,
     height: usize,
     //  The grid itself is a matrix
@@ -8,6 +8,13 @@ struct Grid {
 }
 
 impl Grid {
+    pub fn new(width: usize, height: usize, cells: Vec<Vec<Cell>>) -> Grid {
+        Self {
+            width,
+            height,
+            grid: cells
+        }
+    }
     pub fn update_display(&mut self) {
         let mut new_grid = self.grid.clone(); // Create a new grid to store updated cell statuses
 
@@ -45,7 +52,6 @@ impl Grid {
                 if dx == 0 && dy == 0 {
                     continue;
                 }
-
                 let x = g_width as isize + dx;
                 let y = g_height as isize + dy;
 
@@ -57,5 +63,14 @@ impl Grid {
         }
 
         neighbors
+    }
+    pub fn grid_height(&self) -> usize {
+        self.height.clone()
+    }
+    pub fn grid_width(&self) -> usize {
+        self.width.clone()
+    }
+    pub fn points(&self, x: usize, y: usize) -> Cell {
+        self.grid[x][y].clone()
     }
 }
