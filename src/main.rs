@@ -1,3 +1,4 @@
+
 use macroquad::prelude::*;
 
 const CELL_SIZE: f32 = 10.0;
@@ -40,3 +41,4 @@ async fn main() {
         next_frame().await
     }
 }
+
