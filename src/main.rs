@@ -1,19 +1,44 @@
-mod cell;
-mod grid;
 
 use macroquad::prelude::*;
 
-#[macroquad::main("BasicShapes")]
+const CELL_SIZE: f32 = 10.0;
+const SQUARES: i16 = 16;
+#[macroquad::main("rusty-game-of-life")]
 async fn main() {
+    let grid_width = 80;
+    let grid_height = 60;
+
+   // let mut grid = Grid::new(grid_width, grid_height);
+
     loop {
-        clear_background(RED);
+        clear_background(WHITE);
 
-        draw_line(40.0, 40.0, 100.0, 200.0, 15.0, BLUE);
-        draw_rectangle(screen_width() / 2.0 - 60.0, 100.0, 120.0, 60.0, GREEN);
-        draw_circle(screen_width() - 30.0, screen_height() - 30.0, 15.0, YELLOW);
+        // Draw grid lines
+        for x in 0..=grid_width {
+            draw_line(
+                x as f32 * CELL_SIZE,
+                0.0,
+                x as f32 * CELL_SIZE,
+                grid_height as f32 * CELL_SIZE,
+                1.0,
+                BLACK,
+            );
+        }
+        for y in 0..=grid_height {
+            draw_line(
+                0.0,
+                y as f32 * CELL_SIZE,
+                grid_width as f32 * CELL_SIZE,
+                y as f32 * CELL_SIZE,
+                1.0,
+                BLACK,
+            );
+        }
 
-        draw_text("IT WORKS!", 20.0, 20.0, 30.0, DARKGRAY);
+        // Update and draw cells
+       // grid.update_display();
 
         next_frame().await
     }
 }
+
