@@ -9,8 +9,7 @@ This is a Rust implementation of Conway's Game of Life, a classic cellular autom
 2. Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/yourusername/game-of-life-rust.git
-    ```
+    git clone https://github.com/isoprophlex/rusty-game-of-life    ```
 
 3. Navigate to the project directory:
 
