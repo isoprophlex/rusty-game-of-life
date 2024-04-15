@@ -30,7 +30,11 @@ This is a Rust implementation of Conway's Game of Life, a classic cellular autom
    b. Press SPACE to update the state of the game
    
    c. Enjoy!
-   
+
+6. Documentation
+   ```bash
+   cargo doc 
+    ```
 
 ## Credits
 
