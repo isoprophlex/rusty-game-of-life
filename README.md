@@ -20,11 +20,17 @@ This is a Rust implementation of Conway's Game of Life, a classic cellular autom
 4. Build and run the project using Cargo:
 
     ```bash
-    cargo run
+    cargo run [alive_cell_color] [background_color]
     ```
 
-5. Follow the on-screen instructions to interact with the Game of Life.
+5. Rules to play!
+   
+   a. Add your desired points left clicking and dragging on the screen
 
+   b. Press SPACE to update the state of the game
+   
+   c. Enjoy!
+   
 
 ## Credits
 
